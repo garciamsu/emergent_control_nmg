@@ -5,7 +5,7 @@ from esdl import esdl
 from datetime import datetime
 import matplotlib.pyplot as plt
 from esdl.esdl_handler import EnergySystemHandler
-from classes.agent.peu import powerExchangeUnitAgent
+from sourcecode.classes.agent.peu import powerExchangeUnitAgent
 
 # User-defined functions
 def read_esdl(file):
@@ -60,7 +60,7 @@ def read_esdl(file):
     return nodes
 
 # Parameters
-pathname = '/scenarios/unet'
+pathname = '/src/scenarios'
 route = os.getcwd() + pathname + "/online"
 cases = os.listdir(route)
 
