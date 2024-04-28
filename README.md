@@ -1,6 +1,6 @@
 # A Multiagent System for the Distributed Control in Networked Microgrids using ESDL
 
-![Ubuntu](https://img.shields.io/badge/Ubuntu-22.04.4 LTS-gray.svg)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-22.04.4.LTS-8A2BE2.svg)
 ![Anaconda](https://img.shields.io/badge/Anaconda-2024.02-blue.svg)
 ![Python](https://img.shields.io/badge/Python-3.11.7-orange.svg)
 
