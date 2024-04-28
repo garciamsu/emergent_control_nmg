@@ -3,7 +3,7 @@
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-22.04.4.LTS-8A2BE2.svg)
 ![Anaconda](https://img.shields.io/badge/Anaconda3-2024.02.1-yellow.svg)
 ![Python](https://img.shields.io/badge/Python-3.11.7-orange.svg)
-![Visual Studio Code](https://img.shields.io/badge/VisualStudioCode-1.88.1-blue.svg)
+![Visual Studio Code](https://img.shields.io/badge/Visual Studio Code-1.88.1-blue.svg)
 
 The work addresses the challenges posed by the evolution of power generation systems towards renewable energy resources and decentralized energy networks. It focuses on coordinating energy flows between Networked Microgrids (NMGs) using distributed control strategies based on multi-agent techniques, specifically the Response Threshold Model (RTM) inspired by the behavior of ants to solve the energy *coordination problem* in NMGs. The study utilizes the Energy System Description Language (ESDL) for simulation, allowing the evaluation of various Microgrid topologies to analyze load balance and energy exchange between neighboring Microgrids. Results demonstrate an improvement in resilience, indicating the effectiveness of the proposed distributed control strategies. The use of ESDL for simulation provides an open and accessible platform to analyze microgrid scenarios, contributing to reproducibility and transparency in research, through a theoretical framework and a comprehensive methodology, supported by detailed documentation of the simulation configurations, the code source and the parameters used to ensure the reproducibility of the scenarios, as well as contribute to future research for the development of the proposal.
 
@@ -11,7 +11,7 @@ The work addresses the challenges posed by the evolution of power generation sys
 
 This section describes the installation process of the application under a Linux environment and framework as previously described.
 
-* Install the Anaconda framework. For more information consult the following [LINK] (https://www.liberiangeek.net/2024/01/install-anaconda-ubuntu-tutorial-for-beginners/)
+* Install the Anaconda distribution. For more information consult the following ![LINK] (https://www.liberiangeek.net/2024/01/install-anaconda-ubuntu-tutorial-for-beginners/)
 * 
 
 
