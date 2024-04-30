@@ -22,33 +22,18 @@ This section describes the installation process of the application under a Linux
     ```
 
 > [!WARNING]
-> If you get this problem "Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?". Here is a possible ![SOLUTION](https://stackoverflow.com/questions/44678725/cannot-connect-to-the-docker-daemon-at-unix-var-run-docker-sock-is-the-docker)
+> If you get this problem "Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?". Here is a possible [SOLUTION](https://stackoverflow.com/questions/44678725/cannot-connect-to-the-docker-daemon-at-unix-var-run-docker-sock-is-the-docker)
 
 * Install the Energy System Description Language [ESDL](https://github.com/ESDLMapEditorESSIM/docker-toolsuite). The installation and configuration procedure is summarized below.
 
-    ```
-    mkdir /home/$USER/esdl
-    cd /home/$USER/esdl
-    git clone https://github.com/ESDLMapEditorESSIM/docker-toolsuite.git
-    cd docker-toolsuite/
+> [!TIP]
+> Replace the **docker compose-up** command with **docker compose up**, and run with **sudo**.
 
-    # Step 1. Starting the software for the base infrastructure
-    cd BaseInfrastructure
-    sudo docker compose up
+* ESDL Map Editor: Upload some profiles in View/Settings/Upload profiles, for which we will find the files in directory /datasets
 
-    # Step 2. Import the keycloak settings for the MapEditor
-    cd BaseInfrastructure
-    sudo docker cp keycloak/esdl-mapeditor-realm.json keycloak:/tmp/esdl-mapeditor-realm.json
-    sudo docker compose restart keycloak
-    ```
-
-  _ Step 3. Creating user accounts
-    _ Using you webbrowser, go to http://localhost:8080 to open keycloak
-    
-
-* Install the Anaconda distribution. For more information consult the following ![LINK](https://www.liberiangeek.net/2024/01/install-anaconda-ubuntu-tutorial-for-beginners/)
+* Install the Anaconda distribution. For more information consult the following [LINK](https://www.liberiangeek.net/2024/01/install-anaconda-ubuntu-tutorial-for-beginners/)
 * Install the following dependencies
-  _ ![pyESDL 24.2](https://pypi.org/project/pyESDL/)
+  _ [pyESDL 24.2](https://pypi.org/project/pyESDL/)
 
     ```
     pip install pyESDL[all]
@@ -60,8 +45,6 @@ This section describes the installation process of the application under a Linux
 ![]()
 
 pip install pyESDL[all]
-
-
 
 #https://github.com/EnergyTransition/ESDL-PyEcore-Tutorial/blob/master/ESDLTutorials.ipynb
 #https://github.com/redekok/startanalyse-esdl/blob/master/parse_data.py
@@ -83,8 +66,5 @@ https://github.com/magnusoy/Python-PID/blob/master/src/pid.py
 
 #https://www.geeksforgeeks.org/adding-new-column-to-existing-dataframe-in-pandas/
 
-
-
-
-
 https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+
