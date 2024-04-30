@@ -11,6 +11,41 @@ The work addresses the challenges posed by the evolution of power generation sys
 
 This section describes the installation process of the application under a Linux environment and framework as previously described.
 
+* Install [Docker](https://docs.docker.com/engine/install/ubuntu/). The installation and configuration procedure is summarized below.
+
+    ```
+    sudo su
+    curl -fsSL https://get.docker.com -o get-docker.sh
+    sh get-docker.sh
+    sudo rm get-docker.sh
+    systemctl start docker
+    ```
+
+> [!WARNING]
+> If you get this problem "Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?". Here is a possible ![SOLUTION](https://stackoverflow.com/questions/44678725/cannot-connect-to-the-docker-daemon-at-unix-var-run-docker-sock-is-the-docker)
+
+* Install the Energy System Description Language [ESDL](https://github.com/ESDLMapEditorESSIM/docker-toolsuite). The installation and configuration procedure is summarized below.
+
+    ```
+    mkdir /home/$USER/esdl
+    cd /home/$USER/esdl
+    git clone https://github.com/ESDLMapEditorESSIM/docker-toolsuite.git
+    cd docker-toolsuite/
+
+    # Step 1. Starting the software for the base infrastructure
+    cd BaseInfrastructure
+    sudo docker compose up
+
+    # Step 2. Import the keycloak settings for the MapEditor
+    cd BaseInfrastructure
+    sudo docker cp keycloak/esdl-mapeditor-realm.json keycloak:/tmp/esdl-mapeditor-realm.json
+    sudo docker compose restart keycloak
+    ```
+
+  _ Step 3. Creating user accounts
+    _ Using you webbrowser, go to http://localhost:8080 to open keycloak
+    
+
 * Install the Anaconda distribution. For more information consult the following ![LINK](https://www.liberiangeek.net/2024/01/install-anaconda-ubuntu-tutorial-for-beginners/)
 * Install the following dependencies
   _ ![pyESDL 24.2](https://pypi.org/project/pyESDL/)
