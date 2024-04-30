@@ -11,14 +11,25 @@ The work addresses the challenges posed by the evolution of power generation sys
 
 This section describes the installation process of the application under a Linux environment and framework as previously described.
 
-* Install the Anaconda distribution. For more information consult the following ![LINK] (https://www.liberiangeek.net/2024/01/install-anaconda-ubuntu-tutorial-for-beginners/)
-* 
+* Install the Anaconda distribution. For more information consult the following ![LINK](https://www.liberiangeek.net/2024/01/install-anaconda-ubuntu-tutorial-for-beginners/)
+* Install the following dependencies
+  _ ![pyESDL 24.2](https://pypi.org/project/pyESDL/)
+
+    ```
+    pip install pyESDL[all]
+    ```
+  _ 
+  _ 
+
+
+![]()
+
+pip install pyESDL[all]
 
 
 
 #https://github.com/EnergyTransition/ESDL-PyEcore-Tutorial/blob/master/ESDLTutorials.ipynb
 #https://github.com/redekok/startanalyse-esdl/blob/master/parse_data.py
-#https://pypi.org/project/pyESDL/
 #https://energytransition.github.io/
 #https://github.com/EnergyTransition/ESDL-Geometry-Information
 #https://github.com/EnergyTransition/excel-2-esdl

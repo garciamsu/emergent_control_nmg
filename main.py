@@ -1,15 +1,14 @@
 import os
-#import time
+import time
 import pandas as pd
-#from esdl import esdl
-#from datetime import datetime
-#import matplotlib.pyplot as plt
-#from esdl.esdl_handler import EnergySystemHandler
-#from sourcecode.classes.agent.peu import powerExchangeUnitAgent
+from esdl import esdl
+from datetime import datetime
+import matplotlib.pyplot as plt
+from esdl.esdl_handler import EnergySystemHandler
+from sourcecode.classes.agent.peu import powerExchangeUnitAgent
 
 # User-defined functions
 def read_esdl(file):
-    # https://pypi.org/project/pyESDL/
     esh = EnergySystemHandler()
 
     nodes = []
@@ -73,18 +72,18 @@ connection = {
 }
 
 # Generates the nodes with their relationships based on the .ESDL source file
-#for case in cases:
-#    nodes = read_esdl(os.path.join(route, case))
+for case in cases:
+    nodes = read_esdl(os.path.join(route, case))
 
 # Initialization of exchange agents
-#agents = []
-#for index, node in enumerate(nodes):
-#    agent = powerExchangeUnitAgent(node, connection)
-#    agents.append(agent)
+agents = []
+for index, node in enumerate(nodes):
+    agent = powerExchangeUnitAgent(node, connection)
+    agents.append(agent)
 
 # The time range to carry out the sweep is established
 # https://stackoverflow.com/questions/70029304/create-pandas-dataframe-from-datetime-range
-#environment = pd.DataFrame({'time':pd.date_range(start='2019-01-01 00:00:00', end='2019-01-02 23:50:00', freq="10T")}) #S
+environment = pd.DataFrame({'time':pd.date_range(start='2019-01-01 00:00:00', end='2019-01-02 23:50:00', freq="10T")}) #S
 
 #for index, instant in environment.iterrows():
 #    for peu in agents:
