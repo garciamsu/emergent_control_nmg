@@ -59,7 +59,7 @@ def read_esdl(file):
     return nodes
 
 # Parameters
-pathname = '/sourcecode/simulationsetups'
+pathname = '/simulationsetups'
 route = os.getcwd() + pathname + "/online"
 cases = os.listdir(route)
 
