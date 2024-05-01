@@ -6,7 +6,7 @@
 ![Python](https://img.shields.io/badge/Python-3.11.7-FFE469.svg)
 ![Visual Studio Code](https://img.shields.io/badge/Visual_Studio_Code-1.88.1-22A4F1.svg)
 
-<p align="justify"> The work addresses the challenges posed by the evolution of power generation systems towards renewable energy resources and decentralized energy networks. It focuses on coordinating energy flows between Networked Microgrids (NMGs) using distributed control strategies based on multi-agent techniques, specifically the Response Threshold Model (RTM) inspired by the behavior of ants to solve the energy *coordination problem* in NMGs. The study utilizes the Energy System Description Language (ESDL) for simulation, allowing the evaluation of various Microgrid topologies to analyze load balance and energy exchange between neighboring Microgrids. Results demonstrate an improvement in resilience, indicating the effectiveness of the proposed distributed control strategies. The use of ESDL for simulation provides an open and accessible platform to analyze microgrid scenarios, contributing to reproducibility and transparency in research, through a theoretical framework and a comprehensive methodology, supported by detailed documentation of the simulation configurations, the code source and the parameters used to ensure the reproducibility of the scenarios, as well as contribute to future research for the development of the proposal. </p>
+<p align="justify"> The work addresses the challenges posed by the evolution of power generation systems towards renewable energy resources and decentralized energy networks. It focuses on coordinating energy flows between Networked Microgrids (NMGs) using distributed control strategies based on multi-agent techniques, specifically the Response Threshold Model (RTM) inspired by the behavior of ants to solve the energy <b>coordination problem</b> in NMGs. The study utilizes the Energy System Description Language (ESDL) for simulation, allowing the evaluation of various Microgrid topologies to analyze load balance and energy exchange between neighboring Microgrids. Results demonstrate an improvement in resilience, indicating the effectiveness of the proposed distributed control strategies. The use of ESDL for simulation provides an open and accessible platform to analyze microgrid scenarios, contributing to reproducibility and transparency in research, through a theoretical framework and a comprehensive methodology, supported by detailed documentation of the simulation configurations, the code source and the parameters used to ensure the reproducibility of the scenarios, as well as contribute to future research for the development of the proposal. </p>
 
 # Installation
 
@@ -25,10 +25,10 @@ This section describes the installation process of the application under a Linux
 > [!WARNING]
 > If you get this problem "Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?". Here is a possible [SOLUTION](https://stackoverflow.com/questions/44678725/cannot-connect-to-the-docker-daemon-at-unix-var-run-docker-sock-is-the-docker)
 
-* Install the Energy System Description Language [ESDL](https://github.com/ESDLMapEditorESSIM/docker-toolsuite). The installation and configuration procedure is summarized below.
+* Install the **Energy System Description Language** [ESDL](https://github.com/ESDLMapEditorESSIM/docker-toolsuite).
 
 > [!TIP]
-> Replace the **docker compose-up** command with **docker compose up**, and run with **sudo**.
+> Replace the *docker compose-up* command with *docker compose up*, and run with sudo.
 
 * ESDL Map Editor: Upload some profiles in View/Settings/Upload profiles, for which we will find the files in directory /datasets
 
@@ -37,15 +37,17 @@ This section describes the installation process of the application under a Linux
 
 > [!NOTE]
 > **Connection configuration parameters:**
-  * address: 'localhost'
-  * port: 8086
-  * user: 'admin'
-  * password: 'admin'
-  * database: 'energy_profiles'
+    ```
+    address: 'localhost'
+    port: 8086
+    user: 'admin'
+    password: 'admin'
+    database: 'energy_profiles'
+    ```
 
 * Install the Anaconda distribution. For more information consult the following [LINK](https://www.liberiangeek.net/2024/01/install-anaconda-ubuntu-tutorial-for-beginners/)
 * Install the following dependencies
-  _ [pyESDL 24.2](https://pypi.org/project/pyESDL/)
+  _[pyESDL 24.2](https://pypi.org/project/pyESDL/)
     ```
     pip install pyESDL[all]
     ```
