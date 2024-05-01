@@ -37,13 +37,14 @@ This section describes the installation process of the application under a Linux
 
 > [!NOTE]
 > **Connection configuration parameters:**
-    ```
-    address: localhost
-    port: 8086
-    user: admin
-    password: admin
-    database: energy_profiles
-    ```
+
+  ```
+  address: localhost
+  port: 8086
+  user: admin
+  password: admin
+  database: energy_profiles
+  ```
 
 * Install the Anaconda distribution. For more information consult the following [LINK](https://www.liberiangeek.net/2024/01/install-anaconda-ubuntu-tutorial-for-beginners/)
 * Install the following dependencies
