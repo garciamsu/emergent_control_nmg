@@ -38,21 +38,19 @@ This section describes the installation process of the application under a Linux
 > [!NOTE]
 > **Connection configuration parameters:**
     ```
-    address: 'localhost'
+    address: localhost
     port: 8086
-    user: 'admin'
-    password: 'admin'
-    database: 'energy_profiles'
+    user: admin
+    password: admin
+    database: energy_profiles
     ```
 
 * Install the Anaconda distribution. For more information consult the following [LINK](https://www.liberiangeek.net/2024/01/install-anaconda-ubuntu-tutorial-for-beginners/)
 * Install the following dependencies
-  _[pyESDL 24.2](https://pypi.org/project/pyESDL/)
+  - [pyESDL 24.2](https://pypi.org/project/pyESDL/)
     ```
     pip install pyESDL[all]
     ```
-
-
 
 #https://github.com/EnergyTransition/ESDL-PyEcore-Tutorial/blob/master/ESDLTutorials.ipynb
 #https://github.com/redekok/startanalyse-esdl/blob/master/parse_data.py
