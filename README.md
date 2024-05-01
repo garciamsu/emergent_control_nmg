@@ -8,7 +8,7 @@
 
 <p align="justify"> The work addresses the challenges posed by the evolution of power generation systems towards renewable energy resources and decentralized energy networks. It focuses on coordinating energy flows between Networked Microgrids (NMGs) using distributed control strategies based on multi-agent techniques, specifically the Response Threshold Model (RTM) inspired by the behavior of ants to solve the energy <b>coordination problem</b> in NMGs. The study utilizes the Energy System Description Language (ESDL) for simulation, allowing the evaluation of various Microgrid topologies to analyze load balance and energy exchange between neighboring Microgrids. Results demonstrate an improvement in resilience, indicating the effectiveness of the proposed distributed control strategies. The use of ESDL for simulation provides an open and accessible platform to analyze microgrid scenarios, contributing to reproducibility and transparency in research, through a theoretical framework and a comprehensive methodology, supported by detailed documentation of the simulation configurations, the code source and the parameters used to ensure the reproducibility of the scenarios, as well as contribute to future research for the development of the proposal. </p>
 
-# Installation
+## Installation
 
 This section describes the installation process of the application under a Linux environment and framework as previously described.
 
@@ -38,13 +38,13 @@ This section describes the installation process of the application under a Linux
 > [!NOTE]
 > **Connection configuration parameters:**
 
-  ```
-  address: localhost
-  port: 8086
-  user: admin
-  password: admin
-  database: energy_profiles
-  ```
+    ```
+    address: localhost
+    port: 8086
+    user: admin
+    password: admin
+    database: energy_profiles
+    ```
 
 * Install the Anaconda distribution. For more information consult the following [LINK](https://www.liberiangeek.net/2024/01/install-anaconda-ubuntu-tutorial-for-beginners/)
 * Install the following dependencies
@@ -53,25 +53,43 @@ This section describes the installation process of the application under a Linux
     pip install pyESDL[all]
     ```
 
-#https://github.com/EnergyTransition/ESDL-PyEcore-Tutorial/blob/master/ESDLTutorials.ipynb
-#https://github.com/redekok/startanalyse-esdl/blob/master/parse_data.py
-#https://energytransition.github.io/
-#https://github.com/EnergyTransition/ESDL-Geometry-Information
-#https://github.com/EnergyTransition/excel-2-esdl
-#https://github.com/EnergyTransition/Flask-ESDL-service
-#https://github.com/EnergyTransition/shapefile-2-esdl
+## Deploying the Networked Microgrids in ESDL
 
-#https://www.timestamp-converter.com/
+<p align="justify"> For the development of this work, ESDL was used as the simulation tool, motivated by its ability to extend non-native functionalities, through programming languages such as Python, which has innumerable libraries that facilitate the incorporation of new features and functionalities as our control strategy and our energy exchange agent as a DER. This section will describe the utilization of ESDL in our case. </p>
 
-https://subscription.packtpub.com/book/hardware+and+creative/9781786466518/1/ch01lvl1sec12/building-a-smart-temperature-controller-for-your-room
+![Flow Chart](https://github.com/garciamsu/emergent_control_nmg/assets/38272114/13e2e368-f6d9-4f40-b56c-644687fdf5a6)
 
-https://github.com/ivmech/ivPID/blob/master/PID.py
+### Modelling:
 
-https://github.com/m-lundberg/simple-pid/blob/master/simple_pid/pid.py
+[^1]: The components of an NMG are disaggregated into MGs made up of multiple DERs and interconnected through the exchange agent.
+[^2]: The variables of interest of each MG were extracted, such as PT,i PL,i, etc.
+[^3]: The variables of each MG are loaded into the ESDL database (influxDB).
+[^4]: It was assumed that the exchange fluid between the MGs was energy.
+[^5]: Using the MapEditor of ESDL is defined a “.esdl” file with the information that describes the MGs, the relationships between them, and the directions to the databases with the variables of each one.
+[^6]: The Map Editor of ESDL can define the regions of each MG, called MG1, MG2, etc.
+[^7]: The MapEditor of ESDL allows defining the components of each MG and the NMGs using generic producers , generic consumers ,  energy networks , and electricity connections .
+[^8]: Each component is named according to its role and associated to a given MG. 
+[^9]: The relationships among MGs are defined using PEUs (PEU_1-2 defines an energy exchange agent between the connection from MG1 to MG2). 
+[^10]: An example of NMG is:
+  - MG 1: PT1, PL1, ElectricityNetwork1, PEU_1-2, PEU_1-3 and PEU_1-4.
+  - MG 2: PT2, PL2, ElectricityNetwork2, PEU_2-1, PEU_2-3 and PEU_2-4.
+  - MG 3: PT3, PL3, ElectricityNetwork3, PEU_3-1, PEU_3-2 and PEU_3-4.
+  - MG 4: PT4, PL4, ElectricityNetwork4, PEU_4-1, PEU_4-2 and PEU_4-3.
+[^10]: The NMG can be graphed. Different .esdl files were created for each case study.
 
-https://github.com/magnusoy/Python-PID/blob/master/src/pid.py
+### Simulation:
 
-#https://www.geeksforgeeks.org/adding-new-column-to-existing-dataframe-in-pandas/
+[^11]: The ESDL MapEditor was used to model the NMG, and the .esdl file generated is the input for our Python application, where the control logic is executed.
+[^12]: The Python program is executed using the data recorded in the ESDL database (influxDB) of the modelled components.
+[^13]: The dynamic behaviour of the components of the NMG are analysed using their data in order to generate the control actions for the distributed coordination of the MGs community.
 
-https://docs.github.com/es/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+## References
 
+* [ESDL Documentation](https://energytransition.gitbook.io/esdl).
+* [ESDL Model Reference documentation](https://energytransition.github.io/).
+* [Programming with Energy System Description Language](https://github.com/EnergyTransition/ESDL-PyEcore-Tutorial/blob/master/ESDLTutorials.ipynb).
+* [Example de ESDL and Python](https://github.com/redekok/startanalyse-esdl/tree/master).
+* [Example script to process an ESDL file and print all geometry information](https://github.com/EnergyTransition/ESDL-Geometry-Information).
+* [Example Flask ESDL service](https://github.com/EnergyTransition/Flask-ESDL-service).
+* [Create ESDL from Excel](https://github.com/EnergyTransition/excel-2-esdl).
+* [Heat Network Shapefile to ESDL conversion](https://github.com/EnergyTransition/shapefile-2-esdl).
