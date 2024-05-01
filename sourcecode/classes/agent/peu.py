@@ -55,12 +55,12 @@ class powerExchangeUnitAgent():
         print(stringQuery)
         result = self.DBClient.query(stringQuery)
         print(result)
-        #points = result.get_points()
+        points = result.get_points()
 
-        #for item in points:
-        #    item["seconds"] = parser.isoparse(item["time"]).timestamp()
-        #    item["value"] = item[field]
-        #    return item
+        for item in points:
+            item["seconds"] = parser.isoparse(item["time"]).timestamp()
+            item["value"] = item[field]
+            return item
 
     def update(self, i, time):
 
@@ -161,6 +161,7 @@ class powerExchangeUnitAgent():
                 self.neighbors[index]["data"].iloc[i, self.neighbors[index]["data"].columns.get_loc(
                     'not_master')] = 1 - self.neighbors[index]["master"]
 
+        '''
         if (self.modelType == 'mg6'):
 
             # self.producer.setStimulus(self.PT - self.PL)
@@ -201,7 +202,7 @@ class powerExchangeUnitAgent():
 
                 self.neighbors[index]["data"].iloc[i, self.neighbors[index]["data"].columns.get_loc(
                     'consumer')] = self.neighbors[index]["consumer"].sw
-        '''
+        
 
     def performanceIndex(self, i, time):
         if i == 0:

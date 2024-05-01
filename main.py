@@ -93,32 +93,32 @@ for index, instant in environment.iterrows():
         peu.update(index, instant["time"])
 
 #The energy balance is established to know the contribution of each neighboring microgrid to the local one.
-#for reference in agents:
-#    print("************")
-#    temporal = pd.DataFrame()
-#    for peu in agents:
-#        if not reference.name in peu.name:
-#            j = 0            
-#            for neighbor in peu.neighbors:
-#                if reference.name.split(" ")[1] == neighbor["name"].split("_")[1].split("-")[1]:
-#                    print(reference.name + " <--> " + peu.name)
-#                    reference.data['sw_' + neighbor["name"]] = neighbor["data"]["master"]
-#                    col_name = "master-" + str(peu.name.split(" ")[1])
-#                    temporal.loc[:, col_name] = neighbor["data"]["producer"].values.tolist()
+for reference in agents:
+    print("************")
+    temporal = pd.DataFrame()
+    for peu in agents:
+        if not reference.name in peu.name:
+            j = 0            
+            for neighbor in peu.neighbors:
+                if reference.name.split(" ")[1] == neighbor["name"].split("_")[1].split("-")[1]:
+                    print(reference.name + " <--> " + peu.name)
+                    reference.data['sw_' + neighbor["name"]] = neighbor["data"]["master"]
+                    col_name = "master-" + str(peu.name.split(" ")[1])
+                    temporal.loc[:, col_name] = neighbor["data"]["producer"].values.tolist()
 
-#    reference.data["balance"] = temporal.sum(axis = 1)
-#    reference.data.loc[reference.data['balance'] >= 1, 'balance'] = 1
-#    reference.data[neighbor["name"]] = abs(reference.data["dP"]) * reference.data["balance"]
-#    reference.data["balance"] = reference.data["dP"]  + reference.data[neighbor["name"]]
-#    reference.data.loc[reference.data['balance'] > 0, 'balance'] = 0
+    reference.data["balance"] = temporal.sum(axis = 1)
+    reference.data.loc[reference.data['balance'] >= 1, 'balance'] = 1
+    reference.data[neighbor["name"]] = abs(reference.data["dP"]) * reference.data["balance"]
+    reference.data["balance"] = reference.data["dP"]  + reference.data[neighbor["name"]]
+    reference.data.loc[reference.data['balance'] > 0, 'balance'] = 0
 
 # Calculation of performance metrics
-#for index, instant in environment.iterrows():
-#    for peu in agents:
-#        peu.performanceIndex(index, instant["time"])
+for index, instant in environment.iterrows():
+    for peu in agents:
+        peu.performanceIndex(index, instant["time"])
 
 # The graphs are generated
-#for peu in agents:
-#    print(peu.name)
-#    print("ise: " + str(peu.data.iloc[-1]["ise"])+ " " + "iae: " + str(peu.data.iloc[-1]["iae"])+ " " + "loss: " + str(peu.data.iloc[-1]["loss"]/environment.size) + " " + "resiliency: " + str(environment.size/peu.data.iloc[-1]["loss"]))        
-#    peu.graphics_power_differentials(os.getcwd() + pathname + "/results/" + peu.name + ".png")
+for peu in agents:
+    print(peu.name)
+    print("ise: " + str(peu.data.iloc[-1]["ise"])+ " " + "iae: " + str(peu.data.iloc[-1]["iae"])+ " " + "loss: " + str(peu.data.iloc[-1]["loss"]/environment.size) + " " + "resiliency: " + str(environment.size/peu.data.iloc[-1]["loss"]))        
+    peu.graphics_power_differentials(os.getcwd() + pathname + "/results/" + peu.name + ".png")
