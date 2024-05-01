@@ -1,11 +1,12 @@
 # A Multiagent System for the Distributed Control in Networked Microgrids using ESDL
 
-![Ubuntu](https://img.shields.io/badge/Ubuntu-22.04.4.LTS-8A2BE2.svg)
-![Anaconda](https://img.shields.io/badge/Anaconda3-2024.02.1-yellow.svg)
-![Python](https://img.shields.io/badge/Python-3.11.7-orange.svg)
-![Visual Studio Code](https://img.shields.io/badge/Visual_Studio_Code-1.88.1-blue.svg)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-22.04.4.LTS-E95420.svg)
+![Docker](https://img.shields.io/badge/Docker-26.1.0-1D63ED.svg)
+![Anaconda](https://img.shields.io/badge/Anaconda3-2024.02.1-43B049.svg)
+![Python](https://img.shields.io/badge/Python-3.11.7-FFE469.svg)
+![Visual Studio Code](https://img.shields.io/badge/Visual_Studio_Code-1.88.1-22A4F1.svg)
 
-The work addresses the challenges posed by the evolution of power generation systems towards renewable energy resources and decentralized energy networks. It focuses on coordinating energy flows between Networked Microgrids (NMGs) using distributed control strategies based on multi-agent techniques, specifically the Response Threshold Model (RTM) inspired by the behavior of ants to solve the energy *coordination problem* in NMGs. The study utilizes the Energy System Description Language (ESDL) for simulation, allowing the evaluation of various Microgrid topologies to analyze load balance and energy exchange between neighboring Microgrids. Results demonstrate an improvement in resilience, indicating the effectiveness of the proposed distributed control strategies. The use of ESDL for simulation provides an open and accessible platform to analyze microgrid scenarios, contributing to reproducibility and transparency in research, through a theoretical framework and a comprehensive methodology, supported by detailed documentation of the simulation configurations, the code source and the parameters used to ensure the reproducibility of the scenarios, as well as contribute to future research for the development of the proposal.
+<p align="justify"> The work addresses the challenges posed by the evolution of power generation systems towards renewable energy resources and decentralized energy networks. It focuses on coordinating energy flows between Networked Microgrids (NMGs) using distributed control strategies based on multi-agent techniques, specifically the Response Threshold Model (RTM) inspired by the behavior of ants to solve the energy *coordination problem* in NMGs. The study utilizes the Energy System Description Language (ESDL) for simulation, allowing the evaluation of various Microgrid topologies to analyze load balance and energy exchange between neighboring Microgrids. Results demonstrate an improvement in resilience, indicating the effectiveness of the proposed distributed control strategies. The use of ESDL for simulation provides an open and accessible platform to analyze microgrid scenarios, contributing to reproducibility and transparency in research, through a theoretical framework and a comprehensive methodology, supported by detailed documentation of the simulation configurations, the code source and the parameters used to ensure the reproducibility of the scenarios, as well as contribute to future research for the development of the proposal. </p>
 
 # Installation
 
@@ -36,21 +37,18 @@ This section describes the installation process of the application under a Linux
 
 > [!NOTE]
 > **Connection configuration parameters:**
-> address: 'localhost'
-> port: 8086
-> user: 'admin'
-> password: 'admin'
-> database: 'energy_profiles'
+  * address: 'localhost'
+  * port: 8086
+  * user: 'admin'
+  * password: 'admin'
+  * database: 'energy_profiles'
 
 * Install the Anaconda distribution. For more information consult the following [LINK](https://www.liberiangeek.net/2024/01/install-anaconda-ubuntu-tutorial-for-beginners/)
 * Install the following dependencies
   _ [pyESDL 24.2](https://pypi.org/project/pyESDL/)
-
     ```
     pip install pyESDL[all]
     ```
-  _ 
-  _ 
 
 
 
