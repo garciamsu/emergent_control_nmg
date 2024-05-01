@@ -31,6 +31,17 @@ This section describes the installation process of the application under a Linux
 
 * ESDL Map Editor: Upload some profiles in View/Settings/Upload profiles, for which we will find the files in directory /datasets
 
+* Install GUI management tool for the InfluxDB time series database like [InfluxDB WorkBench
+](https://github.com/JorgeMaker/InfluxDBWorkBench) or [Time Series Admin](https://timeseriesadmin.github.io/)
+
+> [!NOTE]
+> **Connection configuration parameters:**
+> address: 'localhost'
+> port: 8086
+> user: 'admin'
+> password: 'admin'
+> database: 'energy_profiles'
+
 * Install the Anaconda distribution. For more information consult the following [LINK](https://www.liberiangeek.net/2024/01/install-anaconda-ubuntu-tutorial-for-beginners/)
 * Install the following dependencies
   _ [pyESDL 24.2](https://pypi.org/project/pyESDL/)
@@ -42,9 +53,6 @@ This section describes the installation process of the application under a Linux
   _ 
 
 
-![]()
-
-pip install pyESDL[all]
 
 #https://github.com/EnergyTransition/ESDL-PyEcore-Tutorial/blob/master/ESDLTutorials.ipynb
 #https://github.com/redekok/startanalyse-esdl/blob/master/parse_data.py

@@ -52,18 +52,20 @@ class powerExchangeUnitAgent():
 
         stringQuery = "SELECT {} FROM {} where time = '{}';".format(
             field, measurement, time)
+        print(stringQuery)
         result = self.DBClient.query(stringQuery)
-        points = result.get_points()
+        print(result)
+        #points = result.get_points()
 
-        for item in points:
-            item["seconds"] = parser.isoparse(item["time"]).timestamp()
-            item["value"] = item[field]
-            return item
+        #for item in points:
+        #    item["seconds"] = parser.isoparse(item["time"]).timestamp()
+        #    item["value"] = item[field]
+        #    return item
 
     def update(self, i, time):
 
         self.readDataInfluxDB(i, time)
-
+        '''
         if (self.modelType == 'mg1'):
             for index, neighbor in enumerate(self.neighbors):
 
@@ -199,6 +201,7 @@ class powerExchangeUnitAgent():
 
                 self.neighbors[index]["data"].iloc[i, self.neighbors[index]["data"].columns.get_loc(
                     'consumer')] = self.neighbors[index]["consumer"].sw
+        '''
 
     def performanceIndex(self, i, time):
         if i == 0:
@@ -231,8 +234,13 @@ class powerExchangeUnitAgent():
 
     def readDataInfluxDB(self, i, time):
 
+        print(self.microgrid["PT"]["field"])
+        print(self.microgrid["PT"]["measurement"])
+        print(time)
+
         self.PT = self.read_energy_data(
             self.microgrid["PT"]["field"], self.microgrid["PT"]["measurement"], time)["value"]
+
         self.PL = self.read_energy_data(
             self.microgrid["PL"]["field"], self.microgrid["PL"]["measurement"], time)["value"]
         self.dP = (self.PT - self.PL)

@@ -83,10 +83,13 @@ for index, node in enumerate(nodes):
 
 # The time range to carry out the sweep is established
 # https://stackoverflow.com/questions/70029304/create-pandas-dataframe-from-datetime-range
-environment = pd.DataFrame({'time':pd.date_range(start='2019-01-01 00:00:00', end='2019-01-02 23:50:00', freq="10T")}) #S
+environment = pd.DataFrame({'time':pd.date_range(start='2019-01-01 00:00:00', end='2019-01-02 23:50:00', freq="10T")}) 
+print(environment)
 
 for index, instant in environment.iterrows():
+    #print('enviromnment *************')
     for peu in agents:
+        #print(peu)
         peu.update(index, instant["time"])
 
 #The energy balance is established to know the contribution of each neighboring microgrid to the local one.
