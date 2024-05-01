@@ -19,8 +19,6 @@ class storageAgent ():
 
             self.consumer.setStimulus (renewablePower - demand) 
             self.consumer.setWorkers (renewablePower / demand)
-        elif (self.modelType == 'ja'):
-            print("Falta implementación")
 
         self.producer.probability()
         self.consumer.probability()

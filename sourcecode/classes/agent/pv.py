@@ -17,8 +17,6 @@ class photovoltaicAgent (Base):
         if (self.modelType == 'mg'):
             self.pv_agent.setStimulus (renewablePower - demand) 
             self.pv_agent.setWorkers (renewablePower / demand) 
-        elif (self.modelType == 'ja'):
-            print("Falta implementación")
 
         self.pv_agent.probability()
 

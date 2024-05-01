@@ -44,7 +44,6 @@ class essModel():
 
         self.listSoc.append(self.soc)
         self.listPower.append(power)
-        #print(str(self.accumulatedCurrent) + " -> " + str(self.soc))
         
     def results(self):
         self.df['soc'] = self.listSoc

@@ -52,9 +52,7 @@ class powerExchangeUnitAgent():
 
         stringQuery = "SELECT {} FROM {} where time = '{}';".format(
             field, measurement, time)
-        print(stringQuery)
         result = self.DBClient.query(stringQuery)
-        print(result)
         points = result.get_points()
 
         for item in points:
@@ -65,103 +63,10 @@ class powerExchangeUnitAgent():
     def update(self, i, time):
 
         self.readDataInfluxDB(i, time)
-        '''
-        if (self.modelType == 'mg1'):
-            for index, neighbor in enumerate(self.neighbors):
 
-                fs = self.PT-(self.PL + self.sumNeighbors)
-                self.neighbors[index]["producer"].setStimulus(fs)
-                self.neighbors[index]["producer"].setWorkers(
-                    (self.neighbors[index]["PT"]+fs)/self.neighbors[index]["PL"])
-                self.neighbors[index]["producer"].probability()
-                print("Stimulus: " + str(self.neighbors[index]["producer"].stimulus) + "\tWorkers:" + str(self.neighbors[index]["producer"].workers) + "\ts:" + str(
-                    self.neighbors[index]["producer"].s_j) + "\tzeta:" + str(self.neighbors[index]["producer"].zeta_ij) + "\tq:" + str(self.neighbors[index]["producer"].q))
+        # if (self.modelType == 'mg1'):
+            # Here is the code of the model to be tested
 
-        if (self.modelType == 'mg2'):
-            for index, neighbor in enumerate(self.neighbors):
-
-                self.neighbors[index]["producer"].setStimulus(
-                    self.PT-(self.PL + self.sumNeighbors))
-                self.neighbors[index]["producer"].setWorkers(
-                    self.interactivityFactor[index]*abs(self.neighbors[index]["dP"])/self.neighbors[index]["PL"])
-                self.neighbors[index]["producer"].probability()
-                print("Stimulus: " + str(self.neighbors[index]["producer"].stimulus) + "\tWorkers:" + str(self.neighbors[index]["producer"].workers) + "\ts:" + str(
-                    self.neighbors[index]["producer"].s_j) + "\tzeta:" + str(self.neighbors[index]["producer"].zeta_ij) + "\tq:" + str(self.neighbors[index]["producer"].q))
-
-        if (self.modelType == 'mg3'):
-
-            for index, neighbor in enumerate(self.neighbors):
-
-                self.neighbors[index]["producer"].setStimulus(
-                    self.PT-(self.PL + self.sumNeighbors))
-                #self.neighbors[index]["producer"].setWorkers (self.interactivityFactor[index]*abs(self.neighbors[index]["dP"])/self.maxNeighbor)
-                self.neighbors[index]["producer"].setWorkers(
-                    self.interactivityFactor[index])
-                self.neighbors[index]["producer"].probability()
-
-                print("Stimulus: " + str(self.neighbors[index]["producer"].stimulus) + "\tWorkers:" + str("{0:.3f}".format(self.neighbors[index]["producer"].workers)) + "\ts:" + str("{0:.3f}".format(
-                    self.neighbors[index]["producer"].s_j)) + "\tzeta:" + str("{0:.3f}".format(self.neighbors[index]["producer"].zeta_ij)) + "\tq:" + str("{0:.3f}".format(self.neighbors[index]["producer"].q)))
-
-        if (self.modelType == 'mg4'):
-
-            self.producer.setStimulus(self.PT - self.PL)
-            self.producer.setWorkers(self.PT / self.PL)
-            self.producer.probability()
-
-            for index, neighbor in enumerate(self.neighbors):
-
-                self.neighbors[index]["producer"].setStimulus(
-                    neighbor["PT"] - neighbor["PL"])
-                self.neighbors[index]["producer"].setWorkers(
-                    neighbor["PT"] / neighbor["PL"])
-                self.neighbors[index]["producer"].probability()
-
-                self.neighbors[index]["exchange"].setStimulus(
-                    abs(self.dP) - abs(neighbor["dP"]))
-                self.neighbors[index]["exchange"].setWorkers(
-                    abs(self.dP) / abs(neighbor["dP"]))
-                self.neighbors[index]["exchange"].probability()
-
-                self.neighbors[index]["master"] = self.producer.sw * (
-                    1 - self.neighbors[index]["producer"].sw)*self.neighbors[index]["exchange"].sw
-
-                # https://stackoverflow.com/questions/31569384/set-value-for-particular-cell-in-pandas-dataframe-with-iloc
-                self.neighbors[index]["data"].iloc[i, self.neighbors[index]["data"].columns.get_loc(
-                    'master')] = self.neighbors[index]["master"]
-
-                self.neighbors[index]["data"].iloc[i, self.neighbors[index]["data"].columns.get_loc(
-                    'not_master')] = 1 - self.neighbors[index]["master"]
-
-        if (self.modelType == 'mg5'):
-
-            # self.producer.setStimulus(self.PT - self.PL)
-            # self.producer.setWorkers(self.PT / self.PL)
-            # self.producer.probability()
-
-            for index, neighbor in enumerate(self.neighbors):
-
-                self.neighbors[index]["producer"].setStimulus(
-                    (self.PT + neighbor["PT"]) - (self.PL + neighbor["PL"]))
-                self.neighbors[index]["producer"].setWorkers(
-                    (self.PT + neighbor["PT"]) / (self.PL + neighbor["PL"]))
-                self.neighbors[index]["producer"].probability()
-
-                self.neighbors[index]["consumer"].setStimulus(
-                    (self.PL + neighbor["PL"]) - (self.PT + neighbor["PT"]))
-                self.neighbors[index]["consumer"].setWorkers(
-                    (self.PT + neighbor["PL"]) / (self.PL + neighbor["PT"]))
-                self.neighbors[index]["consumer"].probability()
-
-                self.neighbors[index]["master"] = self.neighbors[index]["consumer"].sw
-
-                # https://stackoverflow.com/questions/31569384/set-value-for-particular-cell-in-pandas-dataframe-with-iloc
-                self.neighbors[index]["data"].iloc[i, self.neighbors[index]["data"].columns.get_loc(
-                    'master')] = self.neighbors[index]["master"]
-
-                self.neighbors[index]["data"].iloc[i, self.neighbors[index]["data"].columns.get_loc(
-                    'not_master')] = 1 - self.neighbors[index]["master"]
-
-        '''
         if (self.modelType == 'mg6'):
 
             # self.producer.setStimulus(self.PT - self.PL)
@@ -234,10 +139,6 @@ class powerExchangeUnitAgent():
             # 'q')] = 1/self.data.iloc[i]["loss"]
 
     def readDataInfluxDB(self, i, time):
-
-        print(self.microgrid["PT"]["field"])
-        print(self.microgrid["PT"]["measurement"])
-        print(time)
 
         self.PT = self.read_energy_data(
             self.microgrid["PT"]["field"], self.microgrid["PT"]["measurement"], time)["value"]

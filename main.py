@@ -59,7 +59,7 @@ def read_esdl(file):
     return nodes
 
 # Parameters
-pathname = '/sourcecode/scenarios'
+pathname = '/sourcecode/simulationsetups'
 route = os.getcwd() + pathname + "/online"
 cases = os.listdir(route)
 
@@ -84,24 +84,19 @@ for index, node in enumerate(nodes):
 # The time range to carry out the sweep is established
 # https://stackoverflow.com/questions/70029304/create-pandas-dataframe-from-datetime-range
 environment = pd.DataFrame({'time':pd.date_range(start='2019-01-01 00:00:00', end='2019-01-02 23:50:00', freq="10T")}) 
-print(environment)
 
 for index, instant in environment.iterrows():
-    #print('enviromnment *************')
     for peu in agents:
-        #print(peu)
         peu.update(index, instant["time"])
 
 #The energy balance is established to know the contribution of each neighboring microgrid to the local one.
 for reference in agents:
-    print("************")
     temporal = pd.DataFrame()
     for peu in agents:
         if not reference.name in peu.name:
             j = 0            
             for neighbor in peu.neighbors:
                 if reference.name.split(" ")[1] == neighbor["name"].split("_")[1].split("-")[1]:
-                    print(reference.name + " <--> " + peu.name)
                     reference.data['sw_' + neighbor["name"]] = neighbor["data"]["master"]
                     col_name = "master-" + str(peu.name.split(" ")[1])
                     temporal.loc[:, col_name] = neighbor["data"]["producer"].values.tolist()
@@ -121,4 +116,4 @@ for index, instant in environment.iterrows():
 for peu in agents:
     print(peu.name)
     print("ise: " + str(peu.data.iloc[-1]["ise"])+ " " + "iae: " + str(peu.data.iloc[-1]["iae"])+ " " + "loss: " + str(peu.data.iloc[-1]["loss"]/environment.size) + " " + "resiliency: " + str(environment.size/peu.data.iloc[-1]["loss"]))        
-    peu.graphics_power_differentials(os.getcwd() + pathname + "/results/" + peu.name + ".png")
+    peu.graphics_power_differentials(os.getcwd() + "/output/" + peu.name + ".png")
