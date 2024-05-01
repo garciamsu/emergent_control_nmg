@@ -62,12 +62,16 @@ This section describes the installation process of the application under a Linux
 ### Modelling:
 
 1. The components of an NMG are disaggregated into MGs made up of multiple DERs and interconnected through the exchange agent.
-2. The variables of interest of each MG were extracted, such as PT,i PL,i, etc.
-3. The variables of each MG are loaded into the ESDL database (influxDB).
+2. The variables of interest of each MG were extracted, such as PT PL, etc.
+3. The [dataset](https://github.com/garciamsu/emergent_control_nmg/tree/main/datasets) of each MG are loaded into the ESDL database (influxDB).
+
+> [!IMPORTANT]
+> The **cs1_*.csv** datasets are used only for case 1, while **cs2_*.csv** are the same from case 2 onwards.
+
 4. It was assumed that the exchange fluid between the MGs was energy.
-5. Using the MapEditor of ESDL is defined a “.esdl” file with the information that describes the MGs, the relationships between them, and the directions to the databases with the variables of each one.
+5. Using the MapEditor of ESDL is defined a **.ESDL** file with the information that describes the MGs, the relationships between them, and the directions to the databases with the variables of each one.
 6. The Map Editor of ESDL can define the regions of each MG, called MG1, MG2, etc.
-7. The MapEditor of ESDL allows defining the components of each MG and the NMGs using generic producers , generic consumers ,  energy networks , and electricity connections .
+7. The MapEditor of ESDL allows defining the components of each MG and the NMGs using generic producers , generic consumers, energy networks and electricity connections.
 8. Each component is named according to its role and associated to a given MG. 
 9. The relationships among MGs are defined using PEUs (PEU_1-2 defines an energy exchange agent between the connection from MG1 to MG2). 
 10. An example of NMG is:
