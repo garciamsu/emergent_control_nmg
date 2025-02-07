@@ -116,4 +116,4 @@ for index, instant in environment.iterrows():
 for peu in agents:
     print(peu.name)
     print("ise: " + str(peu.data.iloc[-1]["ise"])+ " " + "iae: " + str(peu.data.iloc[-1]["iae"])+ " " + "loss: " + str(peu.data.iloc[-1]["loss"]/environment.size) + " " + "resiliency: " + str(environment.size/peu.data.iloc[-1]["loss"]))        
-    peu.graphics_power_differentials(os.getcwd() + "/output/" + peu.name + ".png")
+    peu.graphics_power_differentials(os.getcwd() + "/output/" + peu.name + ".svg")

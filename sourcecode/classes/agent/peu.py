@@ -413,10 +413,16 @@ class powerExchangeUnitAgent():
         axs[2*rows + 1].xaxis.set_major_formatter(myFmt)
         axs[2*rows + 1].plot(self.data["time"], self.data["balance"])
 
+        # Configuración para alta resolución
+        plt.rcParams['figure.dpi'] = 300  # Ajusta la resolución de la figura
+
+        # Tu código de configuración de la gráfica
         plt.tight_layout()
         plt.subplots_adjust(hspace=0.5)
         plt.subplots_adjust(wspace=0.25)
         #plt.xticks(np.arange(0, 48, 2))
         plt.grid()
-        plt.savefig(file)
+
+
+        plt.savefig(file, format='svg')
         plt.show()
