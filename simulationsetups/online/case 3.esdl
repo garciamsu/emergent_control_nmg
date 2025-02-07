@@ -26,7 +26,7 @@
         </geometry>
         <asset xsi:type="esdl:GenericConsumer" id="6a9c526f-a880-4aaa-afe1-fcc72da22ccc" name="PL1">
           <port xsi:type="esdl:InPort" carrier="b37625d7-f15d-45fd-9574-68571befcd4c" connectedTo="6c73cece-3a69-4bff-bae2-efc8ba5f23cc" name="In" id="d6430805-7d60-4fb3-9df8-483c12eeea0b">
-            <profile xsi:type="esdl:InfluxDBProfile" id="5be0ed44-c916-464c-bd5e-b6c05247d0e7" filters="" database="energy_profiles" endDate="2019-01-02T23:50:00.000000+0000" port="8086" host="http://influxdb" multiplier="0.0" startDate="2019-01-01T00:00:00.000000+0000" measurement="cs2_mg1_dataset" field="PL">
+            <profile xsi:type="esdl:InfluxDBProfile" id="5be0ed44-c916-464c-bd5e-b6c05247d0e7" filters="" database="energy_profiles" endDate="2019-01-02T23:50:00.000000+0000" port="8086" host="http://influxdb" multiplier="0.0" startDate="2019-01-01T00:00:00.000000+0000" measurement="cs3_mg1_dataset" field="PL">
               <profileQuantityAndUnit xsi:type="esdl:QuantityAndUnitReference" reference="e9405fc8-5e57-4df5-8584-4babee7cdf1a"/>
             </profile>
           </port>
@@ -34,7 +34,7 @@
         </asset>
         <asset xsi:type="esdl:GenericProducer" id="2bb06dab-ef1d-4202-97c8-997f1008caf4" name="PT1">
           <port xsi:type="esdl:OutPort" carrier="b37625d7-f15d-45fd-9574-68571befcd4c" connectedTo="2fd54926-132b-446d-bae9-625aee6e0ee7" name="Out" id="b0509935-95f1-46e0-a064-55f0d15b8550">
-            <profile xsi:type="esdl:InfluxDBProfile" id="eaf52485-88b1-4bf8-8c23-96eca58cd127" filters="" database="energy_profiles" endDate="2019-01-02T23:50:00.000000+0000" port="8086" host="http://influxdb" multiplier="0.0" startDate="2019-01-01T00:00:00.000000+0000" measurement="cs2_mg1_dataset" field="PT">
+            <profile xsi:type="esdl:InfluxDBProfile" id="eaf52485-88b1-4bf8-8c23-96eca58cd127" filters="" database="energy_profiles" endDate="2019-01-02T23:50:00.000000+0000" port="8086" host="http://influxdb" multiplier="0.0" startDate="2019-01-01T00:00:00.000000+0000" measurement="cs3_mg1_dataset" field="PT">
               <profileQuantityAndUnit xsi:type="esdl:QuantityAndUnitReference" reference="e9405fc8-5e57-4df5-8584-4babee7cdf1a"/>
             </profile>
           </port>
@@ -74,7 +74,7 @@
         </geometry>
         <asset xsi:type="esdl:GenericConsumer" id="b14f2a31-0b85-4460-8a21-4458119e3960" name="PL3">
           <port xsi:type="esdl:InPort" carrier="b37625d7-f15d-45fd-9574-68571befcd4c" connectedTo="7c643176-2fc2-4aa2-9c37-33216db44870" name="In" id="3fcf4f11-e15d-4982-b335-a5822b527850">
-            <profile xsi:type="esdl:InfluxDBProfile" id="05a1371f-e812-4c97-93e1-e9cfac21ad35" filters="" database="energy_profiles" endDate="2019-01-02T23:50:00.000000+0000" port="8086" host="http://influxdb" multiplier="0.0" startDate="2019-01-01T00:00:00.000000+0000" measurement="cs2_mg3_dataset" field="PL">
+            <profile xsi:type="esdl:InfluxDBProfile" id="05a1371f-e812-4c97-93e1-e9cfac21ad35" filters="" database="energy_profiles" endDate="2019-01-02T23:50:00.000000+0000" port="8086" host="http://influxdb" multiplier="0.0" startDate="2019-01-01T00:00:00.000000+0000" measurement="cs3_mg3_dataset" field="PL">
               <profileQuantityAndUnit xsi:type="esdl:QuantityAndUnitReference" reference="e9405fc8-5e57-4df5-8584-4babee7cdf1a"/>
             </profile>
           </port>
@@ -82,7 +82,7 @@
         </asset>
         <asset xsi:type="esdl:GenericProducer" id="22c9b7bd-c9fa-4a6f-8f9e-9f56f728c3e2" name="PT3">
           <port xsi:type="esdl:OutPort" carrier="b37625d7-f15d-45fd-9574-68571befcd4c" connectedTo="cd801221-7ccb-40a4-917d-96feb85dd12b" name="Out" id="eab16b1d-a5e4-4fd3-823c-8f144954e833">
-            <profile xsi:type="esdl:InfluxDBProfile" id="f3d7d358-034f-4ccf-b4ec-468e6a98b833" filters="" database="energy_profiles" endDate="2019-01-02T23:50:00.000000+0000" port="8086" host="http://influxdb" multiplier="0.0" startDate="2019-01-01T00:00:00.000000+0000" measurement="cs2_mg3_dataset" field="PT">
+            <profile xsi:type="esdl:InfluxDBProfile" id="f3d7d358-034f-4ccf-b4ec-468e6a98b833" filters="" database="energy_profiles" endDate="2019-01-02T23:50:00.000000+0000" port="8086" host="http://influxdb" multiplier="0.0" startDate="2019-01-01T00:00:00.000000+0000" measurement="cs3_mg3_dataset" field="PT">
               <profileQuantityAndUnit xsi:type="esdl:QuantityAndUnitReference" reference="e9405fc8-5e57-4df5-8584-4babee7cdf1a"/>
             </profile>
           </port>
@@ -137,7 +137,7 @@
         </geometry>
         <asset xsi:type="esdl:GenericProducer" id="c1479e40-43de-4670-b760-6fb56c58a62c" name="PT4">
           <port xsi:type="esdl:OutPort" carrier="b37625d7-f15d-45fd-9574-68571befcd4c" connectedTo="13f6886f-cd00-4b71-9c93-f4579431b9ac" name="Out" id="98f79376-8998-43f8-9502-6fc46f01816e">
-            <profile xsi:type="esdl:InfluxDBProfile" id="96270589-b135-4037-b87e-af73cb1edfbf" filters="" database="energy_profiles" endDate="2019-01-02T23:50:00.000000+0000" port="8086" host="http://influxdb" multiplier="0.0" startDate="2019-01-01T00:00:00.000000+0000" measurement="cs2_mg4_dataset" field="PT">
+            <profile xsi:type="esdl:InfluxDBProfile" id="96270589-b135-4037-b87e-af73cb1edfbf" filters="" database="energy_profiles" endDate="2019-01-02T23:50:00.000000+0000" port="8086" host="http://influxdb" multiplier="0.0" startDate="2019-01-01T00:00:00.000000+0000" measurement="cs3_mg4_dataset" field="PT">
               <profileQuantityAndUnit xsi:type="esdl:QuantityAndUnitReference" reference="e9405fc8-5e57-4df5-8584-4babee7cdf1a"/>
             </profile>
           </port>
@@ -145,7 +145,7 @@
         </asset>
         <asset xsi:type="esdl:GenericConsumer" id="b83a3c87-96b6-4c19-b088-ae015c0bc8f9" name="PL4">
           <port xsi:type="esdl:InPort" carrier="b37625d7-f15d-45fd-9574-68571befcd4c" connectedTo="0684629d-a246-4232-a592-d4e4ad82cc8d" name="In" id="b3d4c8f3-6bc7-44ee-b67c-5a2ee16dcc5b">
-            <profile xsi:type="esdl:InfluxDBProfile" id="5da0ae28-8eb6-4d8c-a4db-647d0872edf0" filters="" database="energy_profiles" endDate="2019-01-02T23:50:00.000000+0000" port="8086" host="http://influxdb" multiplier="0.0" startDate="2019-01-01T00:00:00.000000+0000" measurement="cs2_mg4_dataset" field="PL">
+            <profile xsi:type="esdl:InfluxDBProfile" id="5da0ae28-8eb6-4d8c-a4db-647d0872edf0" filters="" database="energy_profiles" endDate="2019-01-02T23:50:00.000000+0000" port="8086" host="http://influxdb" multiplier="0.0" startDate="2019-01-01T00:00:00.000000+0000" measurement="cs3_mg4_dataset" field="PL">
               <profileQuantityAndUnit xsi:type="esdl:QuantityAndUnitReference" reference="e9405fc8-5e57-4df5-8584-4babee7cdf1a"/>
             </profile>
           </port>
@@ -208,7 +208,7 @@
         </asset>
         <asset xsi:type="esdl:GenericProducer" name="PT2" id="76a2b9f1-1be7-4646-a21d-ff2e8f7c6b4b">
           <port xsi:type="esdl:OutPort" carrier="b37625d7-f15d-45fd-9574-68571befcd4c" connectedTo="767fac84-5d78-46ab-8f2e-980f3dcf16fe" name="Out" id="6d4d8d1b-fc23-4249-982e-8f4c937360c2">
-            <profile xsi:type="esdl:InfluxDBProfile" id="e4c08286-3d2c-4e51-ad32-ed5797060796" filters="" database="energy_profiles" endDate="2019-01-02T23:50:00.000000+0000" port="8086" host="http://influxdb" multiplier="0.0" startDate="2019-01-01T00:00:00.000000+0000" measurement="cs2_mg2_dataset" field="PT">
+            <profile xsi:type="esdl:InfluxDBProfile" id="e4c08286-3d2c-4e51-ad32-ed5797060796" filters="" database="energy_profiles" endDate="2019-01-02T23:50:00.000000+0000" port="8086" host="http://influxdb" multiplier="0.0" startDate="2019-01-01T00:00:00.000000+0000" measurement="cs3_mg2_dataset" field="PT">
               <profileQuantityAndUnit xsi:type="esdl:QuantityAndUnitReference" reference="e9405fc8-5e57-4df5-8584-4babee7cdf1a"/>
             </profile>
           </port>
@@ -216,7 +216,7 @@
         </asset>
         <asset xsi:type="esdl:GenericConsumer" name="PL2" id="5b30e111-1e6a-4a08-8bff-db239bb29d5d">
           <port xsi:type="esdl:InPort" carrier="b37625d7-f15d-45fd-9574-68571befcd4c" connectedTo="dee2018b-d276-494d-880b-d94d0907ea80" name="In" id="ba5385cb-8512-4623-990e-b31596cf7daf">
-            <profile xsi:type="esdl:InfluxDBProfile" id="b03af24a-ebe7-43ce-8b71-004b90371db4" filters="" database="energy_profiles" endDate="2019-01-02T23:50:00.000000+0000" port="8086" host="http://influxdb" multiplier="0.0" startDate="2019-01-01T00:00:00.000000+0000" measurement="cs2_mg2_dataset" field="PL">
+            <profile xsi:type="esdl:InfluxDBProfile" id="b03af24a-ebe7-43ce-8b71-004b90371db4" filters="" database="energy_profiles" endDate="2019-01-02T23:50:00.000000+0000" port="8086" host="http://influxdb" multiplier="0.0" startDate="2019-01-01T00:00:00.000000+0000" measurement="cs3_mg2_dataset" field="PL">
               <profileQuantityAndUnit xsi:type="esdl:QuantityAndUnitReference" reference="e9405fc8-5e57-4df5-8584-4babee7cdf1a"/>
             </profile>
           </port>

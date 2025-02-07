@@ -140,6 +140,10 @@ class powerExchangeUnitAgent():
 
     def readDataInfluxDB(self, i, time):
 
+        print("***************************")
+        print(self.microgrid["PT"]["field"])
+        print(self.microgrid["PT"]["measurement"])
+        print(time)
         self.PT = self.read_energy_data(
             self.microgrid["PT"]["field"], self.microgrid["PT"]["measurement"], time)["value"]
 
