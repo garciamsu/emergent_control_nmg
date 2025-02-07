@@ -339,7 +339,7 @@ class powerExchangeUnitAgent():
 
         return element
 
-    def graphics_power_differentials(self, file):
+    def graphics_power_differentials(self, file, name):
 
         rows = np.size(self.neighbors)
         fig, axs = plt.subplots(np.size(2*self.neighbors) + 2)
@@ -412,6 +412,9 @@ class powerExchangeUnitAgent():
         myFmt = mdates.DateFormatter('%H')
         axs[2*rows + 1].xaxis.set_major_formatter(myFmt)
         axs[2*rows + 1].plot(self.data["time"], self.data["balance"])
+        
+        # Exportar los datos a un archivo CSV
+        self.data[["time", "balance"]].to_csv(name, index=False)  
 
         # Configuración para alta resolución
         plt.rcParams['figure.dpi'] = 300  # Ajusta la resolución de la figura
